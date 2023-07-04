@@ -10,14 +10,14 @@ const Navbar = () => {
   const navigate = useNavigate();
   // const { user } = useContext(AuthContext);
 
-  const handleClick = ({ name1 }) => {
-    if ((name1 = "My Blogs")) {
-      navigate(`/myblogs`);
-    }
-    if ((name1 = "home")) {
-      navigate(`/`);
-    }
-  };
+  // const handleClick = ({ name1 }) => {
+  //   if ((name1 = "My Blogs")) {
+  //     navigate(`/myblogs`);
+  //   }
+  //   if ((name1 = "home")) {
+  //     navigate(`/`);
+  //   }
+  // };
   return (
     <div className="w-[100%] fixed top-0 z-50">
       <div className="flex justify-between bg-white py-[0.5rem] shadow-md shadow-slate-500 ">
@@ -34,10 +34,7 @@ const Navbar = () => {
           <Disclosure as="div" className="relative group">
             {({ open }) => (
               <>
-                <Disclosure.Button
-                  className=" rounded-md p-3  hover:bg-red-400 text-black"
-                  onClick={() => handleClick("home")}
-                >
+                <Disclosure.Button className=" rounded-md p-3  hover:bg-red-400 text-black">
                   {" "}
                   {Cookies.get("user") ? "Home" : "All Blogs"}
                 </Disclosure.Button>
@@ -66,7 +63,7 @@ const Navbar = () => {
               <>
                 <Disclosure.Button
                   className="text-black rounded-md p-3 hover:bg-red-400"
-                  onClick={handleClick("My Blogs")}
+                  // onClick={handleClick("My Blogs")}
                 >
                   {" "}
                   {Cookies.get("user") ? "My Blogs" : "About"}

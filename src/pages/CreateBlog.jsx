@@ -76,7 +76,7 @@ const CreateBlog = () => {
         " x-api-key": Cookies.get("tokens"),
       },
     });
-    alert(res.data.message);
+    alert(res.data.message[0].state);
   };
 
   // const clear = () => {
